@@ -1,0 +1,22 @@
+[
+    {"title": "Design ETL pipeline", "status": "pending"},
+{"title": "Write project report", "status": "in progress"},
+{"title": "Deploy API", "status": "done"},
+{"title": "Test ETL script", "status": "pending"},
+{"title": "Prepare presentation", "status": "in progress"},
+{"title": "Update documentation", "status": "done"},
+{"title": "Fix login bug", "status": "pending"},
+{"title": "Code review", "status": "in progress"},
+{"title": "Optimize database", "status": "done"},
+{"title": "Plan sprint tasks", "status": "pending"},
+{"title": "Conduct team meeting", "status": "in progress"},
+{"title": "Deploy microservice", "status": "done"},
+{"title": "Create UML diagrams", "status": "pending"},
+{"title": "Refactor legacy code", "status": "in progress"},
+{"title": "Implement caching", "status": "done"},
+{"title": "Design UI mockups", "status": "pending"},
+{"title": "Integrate third-party API", "status": "in progress"},
+{"title": "Write unit tests", "status": "done"},
+{"title": "Conduct load testing", "status": "pending"},
+{"title": "Prepare release notes", "status": "in progress"}
+]

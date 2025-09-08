@@ -3,17 +3,14 @@ import pandas as pd
 from src.extract import *
 from src.load import *
 from src.transform import *
+from config import *
 
 # MySQL connection info
-server = "localhost"     # MySQL host (can be IP or container name if Docker)
-port = 3306              # Default MySQL port
-database = "pythontraining"  # Database name
-username = "root"
-password = "NewStrong123!"
+
 
 # SQLAlchemy connection string for MySQL (using pymysql)
 connection_string = (
-    f"mysql+pymysql://{username}:{password}@{server}:{port}/{database}"
+    f"mysql+pymysql://{MYSQLDB['username']}:{MYSQLDB['password']}@{MYSQLDB['server']}:{MYSQLDB['port']}/{MYSQLDB['database']}"
 )
 
 # Create engine

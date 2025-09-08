@@ -2,14 +2,22 @@ import pandas as pd
 
 def first_name(name):
     dstr=name.split()
-    if dstr[0] in ['Mr.','Mrs.','Miss', 'Dr.']:
+    prefixes = ["Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Prof.", "Rev.", "Sir", "Madam", "Mx.",
+    "Master", "Lady", "Dame", "Capt.", "Major", "Col.", "Gen.", "Lt.", "Hon.",
+    "Pres.", "Gov.", "Sen.", "Amb.", "Arch.", "Sheikh", "Sultan", "Prince", "Princess"]
+    if dstr[0] in prefixes:
         return dstr[1]
     else:
         return dstr[0]
 
 def last_name(name):
     dstr=name.split()
-    if dstr[len(dstr)-1] in ['Jr.', 'Sr.', 'II', 'III','MD']:
+    suffixes = [
+    "Jr.", "Sr.", "II", "III", "IV", "V", "Esq.", "PhD", "MD", "DDS", "DVM",
+    "CPA", "MBA", "MSc", "BSc", "DO", "OD", "RN", "JD", "LLD", "Eng.", "Ret.",
+    "CFA", "CM", "OBE", "MBE", "CBE", "KBE", "DBE"
+] 
+    if dstr[len(dstr)-1] in suffixes:
         return dstr[len(dstr)-2]
     else:
         return dstr[len(dstr)-1]

@@ -58,13 +58,6 @@ def transform(customer,orders,order_items,products):
     order_summary['outlier_flag'] = np.where(order_summary['order_total'] > threshold, 1, 0)
 
 
-    # Example transformation: Convert all column names to lowercase
-    customer.columns = [col.lower() for col in customer.columns]
-    orders.columns = [col.lower() for col in orders.columns]
-    order_items.columns = [col.lower() for col in order_items.columns]
-    products.columns = [col.lower() for col in products.columns]
-    
-
     # - sales: line-level sales
 # - order_summary: order-level aggregates
 # - region_month_summary: regional monthly performance

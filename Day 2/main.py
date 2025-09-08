@@ -1,8 +1,8 @@
 from src.extract import extract
 from src.transform import transform_data
 from src.load import load_data
-from sqlalchemy import create_engine
 import pandas as pd
+from sqlalchemy import create_engine
 import pyodbc
 
 # SQL Server connection info

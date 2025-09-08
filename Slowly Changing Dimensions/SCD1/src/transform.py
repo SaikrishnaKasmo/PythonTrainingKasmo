@@ -1,6 +1,7 @@
 import pandas as pd
 
 def scd1(df1, df2):
+    #df2 is incoming data.
     # Ensure both have CustomerID as index
     df1 = df1.set_index("CustomerID")
     df2 = df2.set_index("CustomerID")
