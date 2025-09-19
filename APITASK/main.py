@@ -4,7 +4,6 @@ from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 import json
 
-# In-memory "database"
 tasks = []
 
 class Task(BaseModel):

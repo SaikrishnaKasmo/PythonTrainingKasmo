@@ -205,3 +205,14 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+MAIL_TASK/config/config.py
+UNSTRUCTERED_AWS/config/config.py
+PARQUET_FROM_AWS_TO_/config/config.py
+TASKMONGODB_PART1/config/config.ini
+TASKMONGODB_PART1/config/config.ini
+TASKMONGODB_PART1/config/config.ini
+TASKMONGODB_PART1/config/config.ini
+JSON_TO_SNOWFLAKE/config/config.py
+DYANMODB/config/config.py
+MAIL_TASK/data/client.json
+TASKMONGODB_PART1/config/config.ini

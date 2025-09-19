@@ -13,6 +13,7 @@ def transformation(df1):
         'client.location.city':'client_city',
         'client.location.country':'client_country',
         'team.project_manager':'project_manager'},inplace=True)
+    print(df1)
     df_project=df1[['project_id','project_name','status','client_name','client_industry','client_city','client_country','project_manager']]
 
     df_technologies = df1[['project_id','technologies']].explode("technologies")
