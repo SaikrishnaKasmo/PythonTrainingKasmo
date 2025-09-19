@@ -8,8 +8,6 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from config.config import *
-# Initialize DynamoDB client
 session = boto3.Session(
 aws_access_key_id=aws_details["aws_access_key_id"],
     aws_secret_access_key=aws_details["aws_secret_access_key"],
