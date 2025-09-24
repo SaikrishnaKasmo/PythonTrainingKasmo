@@ -71,7 +71,7 @@ def download_and_convert_pdfs():
                 CopySource={'Bucket': 'resume-kasmo', 'Key': f"TODO/{filename}"},
                 Key=f"archive/{filename}"
             )
-            s3.delete_object(Bucket='resume-kasmo', Key=f"TODO/{filename}")
+            # s3.delete_object(Bucket='resume-kasmo', Key=f"TODO/{filename}")
 
     return extracted_texts
 

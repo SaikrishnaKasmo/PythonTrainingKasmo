@@ -8,7 +8,6 @@ import configparser
 from sqlalchemy import create_engine
 
 
-
 # Connect
 client = MongoClient("mongodb://localhost:27017/")
 db = client["pythontraining"]

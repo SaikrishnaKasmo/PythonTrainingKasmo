@@ -25,12 +25,12 @@ def transform_project(df):
     #Dates
     # df1["start_date"] = pd.to_datetime(df1["start_date"])
     df1.loc[:, "start_date"] = pd.to_datetime(df1["start_date"])
-    df1.loc[:,"end_date"] = pd.to_datetime(df1["end_date"])
+    df1.loc[:, "end_date"] = pd.to_datetime(df1["end_date"])
 
     df1 = df1.drop_duplicates()
 
     Null_count = df1.isnull().sum().sum()
-    print("Count of Nulls:",Null_count)
+    # print("Count of Nulls:",Null_count)
 
     df1['location']= df1['location'].str.title()
     df1['domain'] = df1['domain'].str.title()

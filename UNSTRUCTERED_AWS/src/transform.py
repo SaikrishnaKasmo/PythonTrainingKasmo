@@ -19,7 +19,7 @@ def capture_name(all_text):
     return name
 
 def capture_mail(all_text):
-    pattern = re.compile(r'[a-zA-Z0-9_\.]+@[a-zA-Z0-9_]+\.(com|edu|net|edu|net)',re.IGNORECASE)
+    pattern = re.compile(r'[a-zA-Z0-9_\.]+@[a-zA-Z0-9_]+\.(com|edu|net|gov|net)',re.IGNORECASE)
     matches = pattern.finditer(all_text)
     for match in matches:
         mail = match.group(0)
@@ -36,7 +36,7 @@ def capture_experience(all_text):
         # print(matches)
     # Extract text
     experience_text = match.group(0).strip()
-
+    print(experience_text)
     # Trim to 100 characters
     trimmed_text = experience_text[:100]
 

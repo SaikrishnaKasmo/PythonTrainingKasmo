@@ -24,4 +24,5 @@ def transform(house_df,weather_df):
 
     # Convert boolean to integer
     house_df["outlier_flag"] = house_df["outlier_flag"].astype(int)
+
     return house_df,weather_df

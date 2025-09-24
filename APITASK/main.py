@@ -1,49 +1,59 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from datetime import datetime, timezone
-from contextlib import asynccontextmanager
+#API P2
+import requests
 import json
+with open(r'tasks_raw.json','r') as f:
+    payload=json.load(f)
 
-tasks = []
+for i in payload:
+    response=requests.post("http://127.0.0.1:8000/etl1", json=i)
+    print(response.json())
 
-class Task(BaseModel):
-    title: str
-    status: str
+# from fastapi import FastAPI
+# from pydantic import BaseModel
+# from datetime import datetime, timezone
+# from contextlib import asynccontextmanager
+# import json
 
-STATUS_MAP = {
-    "pending": "Pending",
-    "in progress": "In Progress",
-    "done": "Done"
-}
+# tasks = []
 
-def transform_task(task: Task):
-    return {
-        "title": task.title.title(),
-        "status": STATUS_MAP.get(task.status.lower(), "Pending"),
-        "created_at": datetime.now(timezone.utc).isoformat()
-    }
+# class Task(BaseModel):
+#     title: str
+#     status: str
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    try:
-        with open("tasks_raw.json", "r") as f:
-            data = json.load(f)
-            for t in data:
-                task = Task(**t)
-                tasks.append(transform_task(task))
-        print(f"✅ Loaded {len(tasks)} tasks from tasks_raw.json")
-    except FileNotFoundError:
-        print("⚠️ No initial dataset found.")
-    yield
+# STATUS_MAP = {
+#     "pending": "Pending",
+#     "in progress": "In Progress",
+#     "done": "Done"
+# }
 
-app = FastAPI(lifespan=lifespan)
+# def transform_task(task: Task):
+#     return {
+#         "title": task.title.title(),
+#         "status": STATUS_MAP.get(task.status.lower(), "Pending"),
+#         "created_at": datetime.now(timezone.utc).isoformat()
+#     }
 
-@app.post("/tasks")
-def add_task(task: Task):
-    transformed = transform_task(task)
-    tasks.append(transformed)
-    return {"message": "Task added successfully!", "task": transformed}
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     try:
+#         with open("tasks_raw.json", "r") as f:
+#             data = json.load(f)
+#             for t in data:
+#                 task = Task(**t)
+#                 tasks.append(transform_task(task))
+#         print(f"Loaded {len(tasks)} tasks from tasks_raw.json")
+#     except FileNotFoundError:
+#         print("No initial dataset found.")
+#     yield
 
-@app.get("/tasks")
-def get_tasks():
-    return tasks
+# app = FastAPI(lifespan=lifespan)
+
+# @app.post("/tasks")
+# def add_task(task: Task):
+#     transformed = transform_task(task)
+#     tasks.append(transformed)
+#     return {"message": "Task added successfully!", "task": transformed}
+
+# @app.get("/tasks")
+# def get_tasks():
+#     return tasks

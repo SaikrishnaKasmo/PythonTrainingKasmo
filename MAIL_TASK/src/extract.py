@@ -13,8 +13,8 @@ def extract():
     service = build('gmail','v1',credentials = creds)
     response = service.users().messages().list(
         userId = 'me',
-        q='is:unread',
-        maxResults = 10
+        # q='is:unread',
+        maxResults = 20
     ).execute()
 
     return service,response
